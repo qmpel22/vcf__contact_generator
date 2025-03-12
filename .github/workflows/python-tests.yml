@@ -22,7 +22,10 @@ jobs:
         with:
           python-version: '3.8'  # Wybierz odpowiednią wersję Pythona, np. 3.8
 
-      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip  # Uaktualnienie pip
+          pip install pytest   # Instalowanie zależności z pliku requirements.txt (upewnij się, że masz ten plik w repo)
 
       - name: Run tests with pytest
         run: |
