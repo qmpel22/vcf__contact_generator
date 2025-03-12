@@ -1,0 +1,29 @@
+name: Run Pytest Tests
+
+on:
+  push:
+    branches:
+      - main  # lub dowolna inna gałąź, na której chcesz uruchomić testy
+  pull_request:
+    branches:
+      - main  # uruchomi testy podczas pull requestu na główną gałąź
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Używamy najnowszej wersji systemu Ubuntu
+
+    steps:
+      # Kroki potrzebne do zbudowania i przetestowania aplikacji
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Zaczytanie kodu źródłowego z repozytorium
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Wybierz odpowiednią wersję Pythona, np. 3.8
+
+      
+
+      - name: Run tests with pytest
+        run: |
+          pytest test.py  # Uruchomienie testów w pliku test.py
