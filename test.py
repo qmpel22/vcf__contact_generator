@@ -2,10 +2,8 @@ import unittest
 import os
 import sys
 
-# Dodanie ścieżki do katalogu, a nie do samego pliku
-sys.path.append(r"D:\projekty\vcf_contact_generator\vcf_contact_generator")
 
-from contacts import create_single_contact
+from vcf_contact_generator.contacts import create_single_contact
 
 
 class TestCreateSingleContact(unittest.TestCase):
